@@ -239,7 +239,7 @@ Development Tools
 - Git
 - GitHub
 
-«Add your actual backend and database technologies here if they are implemented in the current MVP.»
+
 
 ---
 
@@ -261,7 +261,7 @@ SmartQueue/
 ├── README.md
 └── ...
 
-«Update this structure according to your actual repository.»
+
 
 ---
 

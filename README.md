@@ -245,22 +245,36 @@ Development Tools
 
 📂 Project Structure
 
-SmartQueue/
+ SmartQueue/
 │
 ├── frontend/
+│   │
 │   ├── index.html
+│   ├── patient.html
+│   ├── doctor.html
+│   ├── login.html
+│   ├── signup.html
+│   │
 │   ├── css/
+│   │   └── style.css
+│   │
 │   ├── js/
-│   └── assets/
+│   │   └── script.js
+│   │
+│   └── images/
+│       └── ...
 │
 ├── backend/
-│   └── ...
+│   │
+│   ├── server.js
+│   ├── package.json
+│   ├── package-lock.json
+│   │
+│   └── node_modules/
+│       └── ...
 │
-├── screenshots/
-│
-├── README.md
-└── ...
-
+├── .gitignore
+└── README.md
 
 
 ---

@@ -1,0 +1,369 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Live Queue | SmartQueue</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <span class="logo-icon">+</span>
+            Smart<span>Queue</span>
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="patient.html">
+                Patient
+            </a>
+
+            <a href="queue.html" class="active">
+                Live Queue
+            </a>
+
+            <a href="doctor.html">
+                Doctor
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- QUEUE PAGE -->
+
+    <main class="queue-page">
+
+        <div class="queue-title">
+
+            <div>
+
+                <div class="badge">
+                    ● LIVE OPD MONITOR
+                </div>
+
+                <h1>
+                    Your Queue Status
+                </h1>
+
+                <p>
+                    Track your position in the OPD queue
+                    in real time.
+                </p>
+
+            </div>
+
+            <div class="live-status">
+                <span></span>
+                Queue is Live
+            </div>
+
+        </div>
+
+
+        <!-- MAIN TOKEN -->
+
+        <section class="main-token-card">
+
+            <div>
+
+                <span class="small-label">
+                    YOUR TOKEN
+                </span>
+
+                <div class="main-token">
+                    <span id="yourToken">
+                        A026
+                    </span>
+                </div>
+
+                <p>
+                    General OPD
+                </p>
+
+            </div>
+
+
+            <div class="token-position">
+
+                <span>
+                    CURRENTLY SERVING
+                </span>
+
+                <strong id="currentToken">
+                    A024
+                </strong>
+
+                <small>
+                    Please wait for your token.
+                </small>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATS -->
+
+        <section class="queue-stats">
+
+
+            <div class="queue-stat-card">
+
+                <div class="stat-icon">
+                    👥
+                </div>
+
+                <span>
+                    PEOPLE AHEAD
+                </span>
+
+                <strong id="peopleAhead">
+                    2
+                </strong>
+
+                <small>
+                    Patients before you
+                </small>
+
+            </div>
+
+
+            <div class="queue-stat-card">
+
+                <div class="stat-icon">
+                    ⏱️
+                </div>
+
+                <span>
+                    ESTIMATED WAIT
+                </span>
+
+                <strong>
+                    <span id="estimatedWait">
+                        16
+                    </span>
+                    <small class="minute">
+                        min
+                    </small>
+                </strong>
+
+                <small>
+                    Approximate waiting time
+                </small>
+
+            </div>
+
+
+            <div class="queue-stat-card">
+
+                <div class="stat-icon">
+                    📍
+                </div>
+
+                <span>
+                    YOUR POSITION
+                </span>
+
+                <strong>
+                    #3
+                </strong>
+
+                <small>
+                    In the current queue
+                </small>
+
+            </div>
+
+
+            <div class="queue-stat-card">
+
+                <div class="stat-icon">
+                    🏥
+                </div>
+
+                <span>
+                    DEPARTMENT
+                </span>
+
+                <strong class="department-name">
+                    OPD
+                </strong>
+
+                <small>
+                    General OPD
+                </small>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROGRESS -->
+
+        <section class="queue-card">
+
+            <div class="queue-card-heading">
+
+                <div>
+
+                    <h2>
+                        Queue Progress
+                    </h2>
+
+                    <p>
+                        Your estimated progress through
+                        the current queue.
+                    </p>
+
+                </div>
+
+                <strong>
+                    72%
+                </strong>
+
+            </div>
+
+
+             <div class="queue-line">
+
+    <span class="queue-dot completed"></span>
+    <span class="queue-connector"></span>
+
+    <span class="queue-dot completed"></span>
+    <span class="queue-connector"></span>
+
+    <span class="queue-dot current"></span>
+    <span class="queue-connector"></span>
+
+    <span class="queue-dot"></span>
+    <span class="queue-connector"></span>
+
+    <span class="queue-dot"></span>
+
+</div>
+
+            <div class="progress-labels">
+
+                <span>
+                    A024
+                </span>
+
+                <span>
+                    Your Token: A026
+                </span>
+
+                <span>
+                    A028
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATUS -->
+
+        <section class="queue-card status-card-new">
+
+            <div class="status-icon-large">
+                ✓
+            </div>
+
+            <div>
+
+                <h2 id="queueStatus">
+                    You're in the queue
+                </h2>
+
+                <p>
+                    Please stay nearby. Your position
+                    will update automatically as patients
+                    are served.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SMART ETA -->
+
+        <section class="queue-card eta-card">
+
+            <div class="eta-icon">
+                ⚡
+            </div>
+
+            <div>
+
+                <span class="small-label">
+                    SMART ETA
+                </span>
+
+                <h2>
+                    Your waiting time is recalculated
+                    dynamically.
+                </h2>
+
+                <p>
+                    If the queue changes or an emergency
+                    case is added, your estimated waiting
+                    time can be updated accordingly.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- EMERGENCY NOTICE -->
+
+        <section class="emergency-notice">
+
+            <div class="emergency-symbol">
+                🚨
+            </div>
+
+            <div>
+
+                <h3>
+                    Emergency cases
+                </h3>
+
+                <p>
+                    Emergency patients may affect the
+                    queue order and estimated waiting time.
+                    SmartQueue keeps the queue updated.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

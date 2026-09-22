@@ -1,0 +1,304 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Patient | SmartQueue</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <span class="logo-icon">+</span>
+            Smart<span>Queue</span>
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="patient.html" class="active">
+                Patient
+            </a>
+
+            <a href="queue.html">
+                Live Queue
+            </a>
+
+            <a href="doctor.html">
+                Doctor
+            </a>
+
+        </div>
+
+        <a href="queue.html" class="nav-button">
+            Live Queue
+        </a>
+
+    </nav>
+
+
+    <!-- PATIENT SECTION -->
+
+    <main class="patient-page">
+
+        <div class="patient-heading">
+
+            <div class="badge">
+                PATIENT PORTAL
+            </div>
+
+            <h1>
+                Get your OPD token
+                <span>without the wait.</span>
+            </h1>
+
+            <p>
+                Enter your details below to join the
+                hospital queue digitally.
+            </p>
+
+        </div>
+
+
+        <div class="patient-layout">
+
+
+            <!-- REGISTRATION CARD -->
+
+            <div class="registration-card">
+
+                <div class="card-title">
+
+                    <div class="form-icon">
+                        🎫
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Register for OPD
+                        </h2>
+
+                        <p>
+                            Fill in your details to receive
+                            a digital token.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FORM -->
+
+                <form id="patientForm">
+
+
+                    <!-- NAME -->
+
+                    <label for="patientName">
+                        Patient Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="patientName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+
+                    <!-- DEPARTMENT -->
+
+                    <label for="department">
+                        Department
+                    </label>
+
+                    <select
+                        id="department"
+                        required
+                    >
+
+                        <option value="">
+                            Select department
+                        </option>
+
+                        <option value="General OPD">
+                            General OPD
+                        </option>
+
+                        <option value="Cardiology">
+                            Cardiology
+                        </option>
+
+                        <option value="Orthopaedic">
+                            Orthopaedic
+                        </option>
+
+                        <option value="Paediatrics">
+                            Paediatrics
+                        </option>
+
+                        <option value="Dermatology">
+                            Dermatology
+                        </option>
+
+                    </select>
+
+
+                    <!-- PHONE -->
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter your phone number"
+                        required
+                    >
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="get-token-btn"
+                    >
+                        Get OPD Token →
+                    </button>
+
+
+                </form>
+
+
+                <!-- TOKEN RESULT -->
+
+                <div
+                    id="tokenResult"
+                    class="token-result hidden"
+                >
+
+                    <div class="success-icon">
+                        ✓
+                    </div>
+
+                    <p>
+                        Your token number
+                    </p>
+
+                    <h2 id="tokenNumber">
+                        A001
+                    </h2>
+
+                    <span id="tokenPosition">
+                        Please wait...
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- INFORMATION CARD -->
+
+            <div class="patient-info">
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        ⏱
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Save your time
+                        </h3>
+
+                        <p>
+                            Join the queue digitally and
+                            avoid unnecessary waiting.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        📱
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Track your queue
+                        </h3>
+
+                        <p>
+                            Check your position through
+                            the Live Queue page.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        🔔
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Know when it's your turn
+                        </h3>
+
+                        <p>
+                            Monitor your token and estimated
+                            waiting position.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- SCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

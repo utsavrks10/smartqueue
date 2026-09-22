@@ -1,0 +1,432 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartQueue - Doctor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">Smart<span>Queue</span></div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="patient.html">Patient</a>
+        <a href="queue.html">Live Queue</a>
+        <a href="doctor.html" class="active">Doctor</a>
+    </div>
+
+    <a href="patient.html" class="nav-btn">Get Token</a>
+</nav>
+
+
+<!-- DASHBOARD -->
+<main class="doctor-dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="dashboard-sidebar">
+
+        <div class="sidebar-title">
+            <div class="sidebar-logo">SQ</div>
+            <div>
+                <strong>SmartQueue</strong>
+                <span>Staff Panel</span>
+            </div>
+        </div>
+
+        <div class="sidebar-menu">
+
+            <a href="doctor.html" class="sidebar-item active">
+                <span>▦</span>
+                Dashboard
+            </a>
+
+            <a href="#currentPatient" class="sidebar-item">
+                <span>🎟</span>
+                Current Queue
+            </a>
+
+            <a href="#waitingPatients" class="sidebar-item">
+                <span>👥</span>
+                Patients
+            </a>
+
+            <a href="#queueManagement" class="sidebar-item">
+                <span>📊</span>
+                Queue Stats
+            </a>
+
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="sidebar-help">
+                <span>●</span>
+                OPD System Online
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <section class="dashboard-content">
+
+        <!-- HEADER -->
+        <div class="dashboard-top">
+
+            <div>
+                <div class="dashboard-badge">
+                    ● STAFF DASHBOARD
+                </div>
+
+                <h1>Doctor Dashboard</h1>
+
+                <p>
+                    Manage today's OPD queue and patient flow.
+                </p>
+            </div>
+
+            <div class="dashboard-date">
+                <span>OPD STATUS</span>
+                <strong>● Open</strong>
+            </div>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+        <div class="dashboard-stats">
+
+            <div class="dashboard-stat">
+                <div class="stat-icon blue">🎟</div>
+                <div>
+                    <span>Currently Serving</span>
+                    <strong id="doctorCurrent">--</strong>
+                </div>
+            </div>
+
+            <div class="dashboard-stat">
+                <div class="stat-icon orange">👥</div>
+                <div>
+                    <span>Waiting Patients</span>
+                    <strong>4</strong>
+                </div>
+            </div>
+
+            <div class="dashboard-stat">
+                <div class="stat-icon green">✓</div>
+                <div>
+                    <span>Completed Today</span>
+                    <strong>23</strong>
+                </div>
+            </div>
+
+            <div class="dashboard-stat">
+                <div class="stat-icon purple">⏱</div>
+                <div>
+                    <span>Avg. Consultation</span>
+                    <strong>8 min</strong>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- MAIN GRID -->
+        <div class="dashboard-main-grid">
+
+            <!-- CURRENT PATIENT -->
+            <div class="dashboard-panel current-patient-panel" id="currentPatient">
+
+                <div class="panel-heading">
+                    <div>
+                        <span class="panel-label">NOW SERVING</span>
+                        <h2>Current Patient</h2>
+                    </div>
+
+                    <span class="live-pill">
+                        ● LIVE
+                    </span>
+                </div>
+
+                <div class="current-token-area">
+
+                    <span>Current Token</span>
+
+                    <div class="large-token" id="doctorCurrentLarge">
+                        --
+                    </div>
+
+                    <div class="consultation-status">
+                        ● IN CONSULTATION
+                    </div>
+
+                </div>
+
+                <div class="patient-info-box">
+
+                 <div>
+                  <span>Patient</span>
+                  <strong id="currentPatientName">
+                  Waiting for consultation
+                  </strong>
+                  </div>
+
+              <div>
+        <span>Department</span>
+        <strong id="currentPatientDepartment">
+            General OPD
+        </strong>
+    </div>
+
+</div>
+                <button class="call-next-btn" onclick="callNextPatient()">
+                    Call Next Patient →
+                </button>
+
+                <div class="doctor-message" id="doctorMessage">
+                    Ready to call the next patient.
+                </div>
+
+            </div>
+
+
+            <!-- QUEUE OVERVIEW -->
+            <div class="dashboard-panel queue-overview-panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <span class="panel-label">QUEUE OVERVIEW</span>
+                        <h2>Today's Flow</h2>
+                    </div>
+                </div>
+
+                <div class="queue-chart">
+
+                    <div class="chart-value">
+                        <strong>27</strong>
+                        <span>Total Tokens</span>
+                    </div>
+
+                    <div class="chart-bars">
+
+                        <div class="chart-column">
+                            <div class="bar bar-1"></div>
+                            <span>9 AM</span>
+                        </div>
+
+                        <div class="chart-column">
+                            <div class="bar bar-2"></div>
+                            <span>10 AM</span>
+                        </div>
+
+                        <div class="chart-column">
+                            <div class="bar bar-3"></div>
+                            <span>11 AM</span>
+                        </div>
+
+                        <div class="chart-column">
+                            <div class="bar bar-4"></div>
+                            <span>12 PM</span>
+                        </div>
+
+                        <div class="chart-column">
+                            <div class="bar bar-5"></div>
+                            <span>1 PM</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="flow-stats">
+
+                    <div>
+                        <span>Served</span>
+                        <strong>23</strong>
+                    </div>
+
+                    <div>
+                        <span>Waiting</span>
+                        <strong>4</strong>
+                    </div>
+
+                    <div>
+                        <span>Est. Time</span>
+                        <strong>32 min</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- WAITING PATIENTS -->
+        <div class="dashboard-panel waiting-panel" id="waitingPatients">
+
+            <div class="panel-heading">
+
+                <div>
+                    <span class="panel-label">LIVE QUEUE</span>
+                    <h2>Waiting Patients</h2>
+                </div>
+
+                <span class="patient-count">
+                    4 Waiting
+                </span>
+
+            </div>
+
+
+            <div class="patient-list">
+
+                <div class="patient-list-row">
+
+                    <div class="list-token">
+                        A025
+                    </div>
+
+                    <div class="list-details">
+                        <strong>Patient</strong>
+                        <span>General OPD</span>
+                    </div>
+
+                    <span class="waiting-tag">
+                        Next
+                    </span>
+
+                </div>
+
+
+                <div class="patient-list-row">
+
+                    <div class="list-token">
+                        A026
+                    </div>
+
+                    <div class="list-details">
+                        <strong>Patient</strong>
+                        <span>General OPD</span>
+                    </div>
+
+                    <span class="waiting-tag">
+                        2nd
+                    </span>
+
+                </div>
+
+
+                <div class="patient-list-row">
+
+                    <div class="list-token">
+                        A027
+                    </div>
+
+                    <div class="list-details">
+                        <strong>Patient</strong>
+                        <span>General OPD</span>
+                    </div>
+
+                    <span class="waiting-tag">
+                        3rd
+                    </span>
+
+                </div>
+
+
+                <div class="patient-list-row">
+
+                    <div class="list-token">
+                        A028
+                    </div>
+
+                    <div class="list-details">
+                        <strong>Patient</strong>
+                        <span>General OPD</span>
+                    </div>
+
+                    <span class="waiting-tag">
+                        4th
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM SECTION -->
+        <div class="dashboard-bottom-grid">
+
+            <!-- EMERGENCY -->
+            <div class="dashboard-panel emergency-panel">
+
+                <div class="emergency-content">
+
+                    <div class="emergency-icon">
+                        🚨
+                    </div>
+
+                    <div>
+                        <span class="panel-label">PRIORITY CONTROL</span>
+                        <h2>Emergency Patient</h2>
+                        <p>
+                            Add an emergency patient to the priority queue.
+                        </p>
+                    </div>
+
+                </div>
+
+                <button class="emergency-btn" onclick="handleEmergency()">
+                    + Add Emergency
+                </button>
+
+            </div>
+
+
+            <!-- QUEUE MANAGEMENT -->
+            <div class="dashboard-panel management-panel" id="queueManagement">
+
+                <span class="panel-label">QUEUE MANAGEMENT</span>
+
+                <h2>Today's Summary</h2>
+
+                <div class="management-items">
+
+                    <div>
+                        <span>Total Tokens</span>
+                        <strong>27</strong>
+                    </div>
+
+                    <div>
+                        <span>Served</span>
+                        <strong>23</strong>
+                    </div>
+
+                    <div>
+                        <span>Waiting</span>
+                        <strong>4</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
